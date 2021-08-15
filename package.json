@@ -1,0 +1,16 @@
+{
+  "name": "workers-clusters",
+  "version": "1.0.0",
+  "description": "",
+  "main": "null",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"child-test": "node ./child-processes/server.js"
+  },
+  "author": "Roman Tolokontsev",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
