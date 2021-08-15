@@ -1,11 +1,10 @@
 const express = require("express")
 const app = express()
 const { fork } = require("child_process")
-const MESSAGE_NUMBER = 1000000
-let childProcess
+const MESSAGE_NUMBER = 3000000
 
-app.get("/isprime", (req, res, next) => {
-  childProcess = fork("child-process-test.js")  
+app.get("/", (req, res, next) => {
+  const childProcess = fork("child-process-test.js")  
   childProcess.send(MESSAGE_NUMBER)
   const startTime = new Date()
 
