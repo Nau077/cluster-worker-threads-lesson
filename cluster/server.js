@@ -11,7 +11,7 @@ const start = async function startServer() {
         console.log(`Master ${process.pid} is running.`);
 
         // Run cluster.fork based on numCPUs
-        for (let i = 1; i < numCPUs; i += 1) {
+        for (let i = 0; i < numCPUs; i += 1) {
             cluster.fork();
         }
 

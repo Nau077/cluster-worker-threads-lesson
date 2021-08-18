@@ -7,7 +7,7 @@ const constants = require("../constants")
 const start = function startServer() {
     const filePath = './worker.js';
     const pool = new StaticPool({
-        size: numCPUs - 1,
+        size: numCPUs,
         task: filePath,
         workerData: {},
     });

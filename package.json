@@ -5,7 +5,9 @@
   "main": "null",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "child-test": "node ./child-processes/server.js"
+    "child-test": "node ./child-processes/server.js",
+	"cluster-test": "node ./cluster/server.js",
+	"worker-test": "node ./worker-threads/server.js"
   },
   "author": "Roman Tolokontsev",
   "license": "ISC",
