@@ -5,12 +5,13 @@
   "main": "null",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"child-test": "node ./child-processes/server.js"
+    "child-test": "node ./child-processes/server.js"
   },
   "author": "Roman Tolokontsev",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node-worker-threads-pool": "^1.5.0"
   }
 }

@@ -1,11 +1,17 @@
 const express = require("express")
 const app = express()
 const { fork } = require("child_process")
-const MESSAGE_NUMBER = 3000000
+const constants = require("../constants")
 
 app.get("/", (req, res, next) => {
-  const childProcess = fork("child-process-test.js")  
-  childProcess.send(MESSAGE_NUMBER)
+  const childProcess = fork("child-process-test.js")
+  
+  const message = {
+	multiplier: constants.MULTIPLIER,
+	iterations: constants.ITERATIONS
+  }
+
+  childProcess.send(message)
   const startTime = new Date()
 
   childProcess.on("message", message => {
@@ -21,6 +27,6 @@ app.get("/testrequest", (req, res) => {
   res.send("I am unblocked now")
 })
 
-app.listen(3636, () => console.log("listening on port 3636"))
+app.listen(constants.PORT, constants.HOST, () => console.log("listening on port " + constants.PORT + " and host " + constants.HOST))
 
  
