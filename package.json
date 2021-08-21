@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "child-test": "node ./child-processes/server.js",
-	"cluster-test": "node ./cluster/server.js",
-	"worker-test": "node ./worker-threads/server.js"
+    "cluster-test": "node ./cluster/server.js",
+    "worker-test": "node ./worker-threads/server.js",
+    "lint": "eslint --fix . --ext .js --fix "
   },
   "author": "Roman Tolokontsev",
   "license": "ISC",
@@ -15,5 +16,20 @@
   "dependencies": {
     "express": "^4.17.1",
     "node-worker-threads-pool": "^1.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^1.18.2"
+  },
+  "lint-staged": {
+    "./lib/**/*.{js,jsx}": [
+      "eslint --fix . --ext .js --fix ",
+      "git add"
+    ]
   }
 }
